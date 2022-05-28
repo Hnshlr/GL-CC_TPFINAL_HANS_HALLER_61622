@@ -9,36 +9,97 @@ public class JUnitTesting {
 
     // GENERATING TP FINAL SCENARIO AND PARAMETERS :
 
-    FacturationSystem_TPFinal facturationSystemTPFinal = new FacturationSystem_TPFinal();
+    FacturationSystemIsep facturationSystemIsep = new FacturationSystemIsep();
 
-    Product importedPerfumeBottle = new Product("Imported bottle of perfume",27.99, Classification.UNCLASSIFIED,true);
-    Product perfumeBottle = new Product("Bottle of perfume",18.99, Classification.UNCLASSIFIED,false);
-    Product migrainePills = new Product("Box of migraine pills",9.75, Classification.MEDS,false);
-    Product importedChocolateBox = new Product("Imported box of chocolate",11.25, Classification.FOOD,true);
+    Product importedPerfumeBottle = new Product("1 flacon de parfum importé",27.99, Classification.UNCLASSIFIED,true);
+    Product perfumeBottle = new Product("1 flacon de parfum",18.99, Classification.UNCLASSIFIED,false);
+    Product migrainePills = new Product("1 boite de pilule contre la migraine",9.75, Classification.MEDS,false);
+    Product importedChocolateBox = new Product("1 boite de chocolats importés",11.25, Classification.FOOD,true);
 
     ShoppingCart shoppingCart = new ShoppingCart(new ArrayList<>(Arrays.asList(importedPerfumeBottle, perfumeBottle, migrainePills, importedChocolateBox)));
 
-    Facture facture = new Facture(shoppingCart, facturationSystemTPFinal);
-    double expectedTotal = 74.68;
-    double expectTaxTotal = 6.70;
+    Facture facture = new Facture(shoppingCart, facturationSystemIsep);
 
+
+    // USING JUNIT TESTS TO VERIFY INDIVIDUAL/TOTAL TAX VALUES AND TOTAL PRICES :
 
     @Test
-    public void tests_usingShoppingCartExample() {
+    public void are_AllTestsValid() {
+        // PRINTING FACTURATION SYSTEM USED :
         System.out.println("Now using: "+facture.facturationSystem.getName()+"\n");
-        System.out.println(facture.toString());
-        test_If_ShoppingCartTotal_Equals_ExpectedTotal();
-        test_If_ShoppingCartTaxTotal_Equals_ExpectedTotal();
+
+        // PRINTING RECEIPT :
+        facture.ticketDeCaisse();
+
+        // TESTS :
+        is_ShoppingCart_TotalTaxValue_6point70();
+        is_ShoppingCart_Total_74point68();
+
+        is_ImportedParfumeBottle_TotalPrice_32point19();
+        is_ParfumeBottle_TotalPrice_20point89();
+        is_MigrainePills_TotalPrice_9point75();
+        is_ImportedChocolateBox_TotalPrice_11point85();
+
+        is_ImportedParfumeBottle_taxValue_4point2();
+        is_ParfumeBottle_taxValue_1point9();
+        is_MigrainePills_taxValue_0();
+        is_ImportedChocolateBox_taxValue_0point6();
     }
 
+
+    // FINAL TESTS :
     @Test
-    public void test_If_ShoppingCartTotal_Equals_ExpectedTotal() {
+    public void is_ShoppingCart_TotalTaxValue_6point70() {
+        double expectTaxTotal = 6.70;
+        assertEquals(expectTaxTotal,facture.getTotalTax());
+    }
+    @Test
+    public void is_ShoppingCart_Total_74point68() {
+        double expectedTotal = 74.68;
         assertEquals(expectedTotal,facture.getTotalPrice());
     }
 
+    // PRODUCT'S FINAL VALUES
     @Test
-    public void test_If_ShoppingCartTaxTotal_Equals_ExpectedTotal() {
-        assertEquals(expectTaxTotal,facture.getTotalTax());
+    public void is_ImportedParfumeBottle_TotalPrice_32point19() {
+        double expectedTaxValue = 32.19;
+        assertEquals(expectedTaxValue,importedPerfumeBottle.getCostWithTaxes());
+    }
+    @Test
+    public void is_ParfumeBottle_TotalPrice_20point89() {
+        double expectedTaxValue = 20.89;
+        assertEquals(expectedTaxValue,perfumeBottle.getCostWithTaxes());
+    }
+    @Test
+    public void is_MigrainePills_TotalPrice_9point75() {
+        double expectedTaxValue = 9.75;
+        assertEquals(expectedTaxValue,migrainePills.getCostWithTaxes());
+    }
+    @Test
+    public void is_ImportedChocolateBox_TotalPrice_11point85() {
+        double expectedTaxValue = 11.85;
+        assertEquals(expectedTaxValue,importedChocolateBox.getCostWithTaxes());
     }
 
+    // PRODUCT'S TAX VALUES :
+    @Test
+    public void is_ImportedParfumeBottle_taxValue_4point2() {
+        double expectedTaxValue = 4.2;
+        assertEquals(expectedTaxValue,importedPerfumeBottle.getTaxValue());
+    }
+    @Test
+    public void is_ParfumeBottle_taxValue_1point9() {
+        double expectedTaxValue = 1.9;
+        assertEquals(expectedTaxValue,perfumeBottle.getTaxValue());
+    }
+    @Test
+    public void is_MigrainePills_taxValue_0() {
+        double expectedTaxValue = 0;
+        assertEquals(expectedTaxValue,migrainePills.getTaxValue());
+    }
+    @Test
+    public void is_ImportedChocolateBox_taxValue_0point6() {
+        double expectedTaxValue = 0.6;
+        assertEquals(expectedTaxValue,importedChocolateBox.getTaxValue());
+    }
 }

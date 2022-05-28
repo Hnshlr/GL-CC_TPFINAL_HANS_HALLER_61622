@@ -21,9 +21,9 @@ public class Facture {
             totalTax+=product.getTaxValue();
         }
 
-        // USING MATH.CEIL() AND MATH.FLOOR() TO AVOID .99999 and .00001 AFTER TOTAL PRICE AND TOTAL TAX CALCULATION :
-        totalPrice=Math.ceil(totalPrice*100)/100;
-        totalTax=Math.floor(totalTax*100)/100;
+        // CORRECTING FLOAT ERRORS (.99999 and .00001 ISSUES CAUSED BY "* 2 ^ EXP" DOUBLE REPRESENTATION)   :
+        totalPrice=DoubleHandler.correctFloatValue(totalPrice);
+        totalTax=DoubleHandler.correctFloatValue(totalTax);
     }
 
     public double getTotalTax() {
@@ -41,5 +41,14 @@ public class Facture {
                 ",\n totalTax=" + totalTax +
                 ",\n totalPrice=" + totalPrice +
                 "\n}";
+    }
+
+    public String ticketDeCaisse() {
+        for (Product product: shoppingCart.products) {
+            System.out.println(product.getName()+" : "+product.getInitialCost());
+        }
+        System.out.println("Montant des taxes : "+totalTax);
+        System.out.println("Total : "+totalPrice);
+        return null;
     }
 }
