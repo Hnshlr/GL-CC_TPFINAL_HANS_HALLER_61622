@@ -1,3 +1,5 @@
+package isep.student.haller;
+
 public enum Classification {
 
 

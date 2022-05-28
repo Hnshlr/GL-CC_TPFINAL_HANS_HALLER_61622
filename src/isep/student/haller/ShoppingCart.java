@@ -1,3 +1,5 @@
+package isep.student.haller;
+
 import java.util.List;
 
 public class ShoppingCart {
@@ -9,7 +11,7 @@ public class ShoppingCart {
 
     @Override
     public String toString() {
-        return "ShoppingCart{" +
+        return "isep.student.haller.ShoppingCart{" +
                 "products=" + products +
                 '}';
     }

@@ -1,3 +1,5 @@
+package isep.student.haller;
+
 import java.util.List;
 
 public interface FacturationSystem {

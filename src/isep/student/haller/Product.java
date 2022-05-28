@@ -1,3 +1,5 @@
+package isep.student.haller;
+
 public class Product {
 
     // PRODUCT DEFINING :
@@ -58,7 +60,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "\n  Product{" +
+        return "\n  isep.student.haller.Product{" +
                 "name='" + name + '\'' +
                 ", cost=" + initialCost +
                 ", classification=" + classification +

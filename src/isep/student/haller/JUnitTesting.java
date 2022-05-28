@@ -1,3 +1,5 @@
+package isep.student.haller;
+
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,3 +1,5 @@
+package isep.student.haller;
+
 public class Facture {
 
     FacturationSystem facturationSystem;
@@ -36,7 +38,7 @@ public class Facture {
 
     @Override
     public String toString() {
-        return "Facture{" +
+        return "isep.student.haller.Facture{" +
                 "\n shoppingCart=" + shoppingCart.toString() +
                 ",\n totalTax=" + totalTax +
                 ",\n totalPrice=" + totalPrice +

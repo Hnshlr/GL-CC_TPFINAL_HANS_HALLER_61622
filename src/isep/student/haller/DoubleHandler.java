@@ -1,3 +1,5 @@
+package isep.student.haller;
+
 public class DoubleHandler {
 
     // THIS CLASS SERVE TO FIX ISSUES CAUSED BY "* 2 ^ EXP" DOUBLE REPRESENTATION:
