@@ -3,17 +3,17 @@ public class Product {
     // PRODUCT DEFINING :
 
     private String name;
-    private double cost;
-    private ProductTypes classification;
+    private double initialCost;
+    private Classification classification;
     private boolean isImported;
 
 
     public Product() {
     }
 
-    public Product(String name, double cost, ProductTypes productType, boolean isImported) {
+    public Product(String name, double initialCost, Classification productType, boolean isImported) {
         this.name = name;
-        this.cost = cost;
+        this.initialCost = initialCost;
         this.classification = productType;
         this.isImported = isImported;
     }
@@ -22,11 +22,11 @@ public class Product {
         return name;
     }
 
-    public double getCost() {
-        return cost;
+    public double getInitialCost() {
+        return initialCost;
     }
 
-    public ProductTypes getClassification() {
+    public Classification getClassification() {
         return classification;
     }
 
@@ -54,5 +54,17 @@ public class Product {
 
     public void setCostWithTaxes(double costWithTaxes) {
         this.costWithTaxes = costWithTaxes;
+    }
+
+    @Override
+    public String toString() {
+        return "\n  Product{" +
+                "name='" + name + '\'' +
+                ", cost=" + initialCost +
+                ", classification=" + classification +
+                ", isImported=" + isImported +
+                ", taxValue=" + taxValue +
+                ", costWithTaxes=" + costWithTaxes +
+                '}';
     }
 }

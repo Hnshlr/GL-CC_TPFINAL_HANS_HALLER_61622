@@ -1,4 +1,4 @@
-public enum ProductTypes {
+public enum Classification {
 
 
     UNCLASSIFIED(10),
@@ -7,9 +7,9 @@ public enum ProductTypes {
     MEDS(0),
     ;
 
-    private int taxPercentage;
+    private final int taxPercentage;
 
-    ProductTypes(int taxPercentage) {
+    Classification(int taxPercentage) {
         this.taxPercentage = taxPercentage;
     }
 
