@@ -4,10 +4,6 @@ import java.util.List;
 
 public class FacturationSystemIsep implements FacturationSystem {
 
-    public String getName() {
-        return "Système de facturation imposé par le sujet du TP FINAL de Clean Code.";
-    }
-
     public void calculateProductCostWithTaxes(Product product) {
         double taxPercent = 0;
 
@@ -27,12 +23,5 @@ public class FacturationSystemIsep implements FacturationSystem {
         // CORRECTING FLOAT ERRORS (.99999 and .00001 ISSUES CAUSED BY "* 2 ^ EXP" DOUBLE REPRESENTATION):
         product.setTaxValue(DoubleHandler.correctFloatValue(product.getTaxValue()));
         product.setCostWithTaxes(DoubleHandler.correctFloatValue(product.getCostWithTaxes()));
-
-    }
-
-    public void calculateTotal(List<Product> productList) {
-        for (Product product: productList) {
-            calculateProductCostWithTaxes(product);
-        }
     }
 }

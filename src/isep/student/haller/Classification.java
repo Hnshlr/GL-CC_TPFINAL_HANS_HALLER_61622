@@ -2,7 +2,6 @@ package isep.student.haller;
 
 public enum Classification {
 
-
     UNCLASSIFIED(10),
     FOOD(0),
     BOOK(0),

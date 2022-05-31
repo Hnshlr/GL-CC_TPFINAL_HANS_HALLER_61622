@@ -1,10 +1,7 @@
 package isep.student.haller;
 
-import java.util.List;
-
+@FunctionalInterface
 public interface FacturationSystem {
 
-    String getName();
     void calculateProductCostWithTaxes(Product product);
-    void calculateTotal(List<Product> productList);
 }

@@ -20,7 +20,7 @@ public class JUnitTesting {
 
     ShoppingCart shoppingCart = new ShoppingCart(new ArrayList<>(Arrays.asList(importedPerfumeBottle, perfumeBottle, migrainePills, importedChocolateBox)));
 
-    Facture facture = new Facture(shoppingCart, facturationSystemIsep);
+    Invoice invoice = new Invoice(shoppingCart, facturationSystemIsep);
 
 
     // USING JUNIT TESTS TO VERIFY INDIVIDUAL/TOTAL TAX VALUES AND TOTAL PRICES :
@@ -28,10 +28,10 @@ public class JUnitTesting {
     @Test
     public void are_AllTestsValid() {
         // PRINTING FACTURATION SYSTEM USED :
-        System.out.println("Now using: "+facture.facturationSystem.getName()+"\n");
+        System.out.println("Now using: Système de facturation imposé par le sujet du TP FINAL de Clean Code."+"\n");
 
         // PRINTING RECEIPT :
-        facture.ticketDeCaisse();
+        invoice.ticketDeCaisse();
 
         // TESTS :
         is_ShoppingCart_TotalTaxValue_6point70();
@@ -53,12 +53,12 @@ public class JUnitTesting {
     @Test
     public void is_ShoppingCart_TotalTaxValue_6point70() {
         double expectTaxTotal = 6.70;
-        assertEquals(expectTaxTotal,facture.getTotalTax());
+        assertEquals(expectTaxTotal, invoice.getTotalTax());
     }
     @Test
     public void is_ShoppingCart_Total_74point68() {
         double expectedTotal = 74.68;
-        assertEquals(expectedTotal,facture.getTotalPrice());
+        assertEquals(expectedTotal, invoice.getTotalPrice());
     }
 
     // PRODUCT'S FINAL VALUES

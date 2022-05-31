@@ -1,26 +1,23 @@
 package isep.student.haller;
 
-public class Facture {
+public class Invoice {
 
     FacturationSystem facturationSystem;
     ShoppingCart shoppingCart;
     private double totalTax;
     private double totalPrice;
 
-    public Facture(ShoppingCart shoppingCart, FacturationSystem facturationSystem) {
+    public Invoice(ShoppingCart shoppingCart, FacturationSystem facturationSystem) {
         this.facturationSystem = facturationSystem;
         this.shoppingCart=shoppingCart;
         this.totalTax = 0;
         this.totalPrice = 0;
 
         // CALCULATING PRODUCTS'S "FINAL PRICE WITH TAX" USING PROVIDED FACTURATION SYSTEM :
-        this.facturationSystem.calculateTotal(shoppingCart.products);
-
-        // CALCULATING FACTURE'S TOTAL PRICE AND TOTAL TAX :
-        for (Product product:
-                shoppingCart.products) {
-            totalPrice+=product.getCostWithTaxes();
-            totalTax+=product.getTaxValue();
+        for (Product product: shoppingCart.products) {
+            this.facturationSystem.calculateProductCostWithTaxes(product);
+            totalPrice+=product.getCostWithTaxes(); // ALSO CALCULATING INVOICE'S TOTAL PRICE
+            totalTax+=product.getTaxValue();        // AND TOTAL TAX.
         }
 
         // CORRECTING FLOAT ERRORS (.99999 and .00001 ISSUES CAUSED BY "* 2 ^ EXP" DOUBLE REPRESENTATION)   :
@@ -38,7 +35,7 @@ public class Facture {
 
     @Override
     public String toString() {
-        return "isep.student.haller.Facture{" +
+        return "isep.student.haller.Invoice{" +
                 "\n shoppingCart=" + shoppingCart.toString() +
                 ",\n totalTax=" + totalTax +
                 ",\n totalPrice=" + totalPrice +
