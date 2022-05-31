@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26bebaa4-884f-4621-b1ce-991f050e13e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/Classification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/Classification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/FacturationSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/FacturationSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/FacturationSystemIsep.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/FacturationSystemIsep.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/Facture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/JUnitTesting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GL-CC_TPFINAL_HANS_HALLER_61622/isep/student/haller/JUnitTesting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/isep/student/haller/Classification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/isep/student/haller/Classification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/isep/student/haller/FacturationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/isep/student/haller/FacturationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/isep/student/haller/FacturationSystemIsep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/isep/student/haller/FacturationSystemIsep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/isep/student/haller/Facture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/isep/student/haller/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/isep/student/haller/JUnitTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/isep/student/haller/JUnitTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +67,7 @@
       <updated>1653750125853</updated>
       <workItem from="1653750128427" duration="187000" />
       <workItem from="1653918494559" duration="25000" />
-      <workItem from="1653981489816" duration="2529000" />
+      <workItem from="1653981489816" duration="2977000" />
     </task>
     <servers />
   </component>
